@@ -1,0 +1,8 @@
+dist: xenial # For Go type aliases
+script: make
+deploy:
+  provider: pages
+  github-token:
+    # echo -n ... | openssl rsautl -inkey <(curl https://api.travis-ci.org/repos/{owner}/{repo}/key | jq --raw-output .key) -pubin -encrypt | base64 --wrap 0
+    secure: hWznbHwlCeta+gepvbGYR6ttcaIOkY/mDKbTWrPYNQSHUp8Jfm51uftnuEq+ceW0buW/OCLXrB4o5ZTSwL/9XggribuKrZ0JjkZnBTRoyqBIfIUicaQcvQ4lZS+/rjaemUDf0j/ik6xqDGmq/10H0D1j5anGj5j4B4aFSYrHqX+lLFTI/0FeXOx/r+8rRCDIvmCXjMtSsWbQJTCi7+fCnakX1KQAvkCb96H3CV14gn8cyL7Enu7uXIbIv8unfRJkv8JD8AlJ8BbdOYb1E5tMJKDAJ8RHbeEEAn2W+PyejPqNeT2EGzYNH4AL+bRR6PQfmhlXQ07fIBYvf0wGhJE4dDUOsevUqfYVqymN+ewqcHYmLTugIQ4NcECcvgLM1DogSOkCqTjq/x0h2oeQr5BlZAgGW2dGx4YDM7vzFP7zX/ctTaj4l5LPU+xIZXdMsU23PjCi9GcvuG5oolokaT8n4e/k8LDetZOyc/OUaWebhOrVTMnCXr/c/93nmehKLT8NPo24tFWwprIUDQGFVXT+pmESqknmnCaHsXMvs+EJOt6KgEpYrlXLxLccCgIxmdrMYSBz/4jm3ShujSkeem6i0pZ/xANq3axL/IbNa5+Na0mhNALPynWJldhz2JWS3QvvSonrIh5GpSN6TQXrq1wvXM7T8iNzrAGca2ncV6jkhIA=
+  local-dir: $GOPATH/src/github.com/elastic/beats/build/distributions
